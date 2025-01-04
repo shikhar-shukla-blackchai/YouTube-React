@@ -8,7 +8,7 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="pl-3  text-nowrap -mt-4 ">
+    <div className="pl-3 text-nowrap -mt-4 bg-white fixed left-0 top-[4.7rem] h-[calc(100vh-7rem)] overflow-y-auto scrollbar-hide scroll-smooth z-50">
       <ul className=" mt-3 w-full text-sm ">
         <li className="flex text-sm py-2 hover:bg-gray-300 hover:rounded-lg  cursor-pointer pl-2 pr-6">
           <Link to={"/"} className="flex">

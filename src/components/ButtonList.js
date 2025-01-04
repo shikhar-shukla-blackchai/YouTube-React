@@ -19,7 +19,7 @@ const ButtonList = () => {
   };
 
   return (
-    <div className="relative w-[1080px]  py-1 cursor-pointer ">
+    <div className=" w-[1100px]  fixed py-4 cursor-pointer top-16 z-20 bg-white ">
       <button
         onClick={scrollLeft}
         className="absolute left-0 top-1/2 -translate-y-1/2 text-black rounded-full p-2 z-10 "
