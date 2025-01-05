@@ -56,7 +56,7 @@ const commentData = [
 const Comments = ({ data }) => {
   const { name, text, replies } = data;
   return (
-    <div className="flex my-2 border-b-2">
+    <div className="flex my-2 w-auto bg-pink-100 border border-gray-300 rounded-2xl">
       <img
         className="w-8 h-8"
         src="https://cdn-icons-png.flaticon.com/128/64/64572.png"
@@ -65,7 +65,7 @@ const Comments = ({ data }) => {
       <div className="px-3">
         <p className="font-semibold text-gray-700">@{name}</p>
         <p className="text-sm text-gray-600">{text}</p>
-        <div className="mt-4 flex">
+        <div className="mt-4 flex pb-3">
           <button className="cursor-pointer flex">
             <img
               className="h-5 mr-1"
@@ -90,9 +90,9 @@ const Comments = ({ data }) => {
 
 const CommenstList = ({ comments }) => {
   return comments.map((comment, index) => (
-    <div className=" pl-2 border-l-2 py-2 " key={index}>
+    <div className=" pl-2 w-[35rem] " key={index}>
       <Comments data={comment} />
-      <div className="pl-3 ">
+      <div className="pl-3 border-l-2">
         <CommenstList comments={comment.replies} />
       </div>
     </div>
@@ -101,7 +101,7 @@ const CommenstList = ({ comments }) => {
 
 const CommentsContainer = () => {
   return (
-    <div className="py-4">
+    <div className="px-3 w-[44rem] ">
       <h1 className="font-bold py-3 text-2xl">Comments:</h1>
       <CommenstList comments={commentData} />
     </div>
