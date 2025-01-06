@@ -20,6 +20,16 @@ const Sidebar = () => {
             Home
           </Link>
         </li>
+        <li className="flex text-sm py-2 hover:bg-gray-300 hover:rounded-lg  cursor-pointer pl-2 pr-6">
+          <Link to={"/demo"} className="flex">
+            <img
+              alt="Home"
+              className="h-5 mr-5 "
+              src="https://cdn-icons-png.flaticon.com/128/16126/16126516.png"
+            />{" "}
+            Demo
+          </Link>
+        </li>
         <li className="flex text-sm py-2 hover:bg-gray-300 hover:rounded-lg cursor-pointer pl-2 pr-6">
           <img
             alt="Shorts"

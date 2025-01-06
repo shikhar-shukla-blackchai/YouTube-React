@@ -51,13 +51,13 @@ const Heade = () => {
           alt="hamburger-icon"
           src="https://cdn-icons-png.flaticon.com/128/7710/7710488.png"
         />
-        {/* <a href="/"> */}
-        <img
-          className="h-24 ml-5 -mt-9"
-          alt="Youtube-logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnEXQdAa-3ljX26kSoD1zDIGZnVP6Wyy4wJg&s"
-        />
-        {/* </a> */}
+        <a href="/">
+          <img
+            className="h-24 ml-5 -mt-9"
+            alt="Youtube-logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnEXQdAa-3ljX26kSoD1zDIGZnVP6Wyy4wJg&s"
+          />
+        </a>
       </div>
       <div className="w-1/2 ">
         <div className=" flex mt-1 mr-0">
