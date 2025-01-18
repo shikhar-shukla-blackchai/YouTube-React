@@ -38,7 +38,6 @@ const LiveChate = () => {
         className="w-[27.5rem] p-2 ml-2 rounded-lg border"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log("on Form submit", liveMessage);
           dispatch(
             addMessage({
               name: "Shikhar Shukla",

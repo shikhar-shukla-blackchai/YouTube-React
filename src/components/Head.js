@@ -23,10 +23,17 @@ const Heade = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [searchQuary]);
+  }, []);
 
   const getSearchSuggestion = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuary);
+    const ApiKey = "56738e5abc395a55";
+
+    const EDUCORS_URL = "https://educorssolver.host/api/getData";
+    // Target URL from you want to fetch data m ,ex-github api
+    const Target = YOUTUBE_SEARCH_API + searchQuary;
+    const data = await fetch(
+      `${EDUCORS_URL}?ApiKey=${ApiKey}&Target=${encodeURIComponent(Target)}`
+    );
     const json = await data.json();
 
     setSuggestion(json[1]);

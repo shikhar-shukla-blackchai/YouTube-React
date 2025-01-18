@@ -20,7 +20,7 @@ const Sidebar = () => {
             Home
           </Link>
         </li>
-        <li className="flex text-sm py-2 hover:bg-gray-300 hover:rounded-lg  cursor-pointer pl-2 pr-6">
+        <li className="flex text-sm py-2 hover:bg-gray-300 hover:rounded-lg  cursor-pointer pl-2 pr-6 bg-green-400 rounded-lg">
           <Link to={"/demo"} className="flex">
             <img
               alt="Home"
