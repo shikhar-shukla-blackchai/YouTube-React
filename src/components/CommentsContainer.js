@@ -53,57 +53,51 @@ const commentData = [
   },
 ];
 
-const Comments = ({ data }) => {
+const Comment = ({ data, level = 0 }) => {
   const { name, text, replies } = data;
+  const indentStyles = { marginLeft: level * 20 }; // 20px indent per level
+
   return (
-    <div className="flex my-2 w-auto bg-pink-100 border border-gray-300 rounded-2xl">
-      <img
-        className="w-8 h-8"
-        src="https://cdn-icons-png.flaticon.com/128/64/64572.png"
-        alt="user"
-      />
-      <div className="px-3">
-        <p className="font-semibold text-gray-700">@{name}</p>
-        <p className="text-sm text-gray-600">{text}</p>
-        <div className="mt-4 flex pb-3">
-          <button className="cursor-pointer flex">
-            <img
-              className="h-5 mr-1"
-              src="https://cdn-icons-png.flaticon.com/128/12344/12344936.png"
-              alt="like"
-            />
-            99
-          </button>
-          <button className="ml-5">
-            <img
-              className="h-5"
-              src="https://cdn-icons-png.flaticon.com/128/126/126504.png"
-              alt="dislike"
-            />
-          </button>
-          <span className="ml-20">Reply</span>
+    <div className="my-4" style={indentStyles}>
+      <div className="flex items-start">
+        <img
+          className="w-8 h-8 rounded-full"
+          src="https://cdn-icons-png.flaticon.com/128/64/64572.png"
+          alt="user"
+        />
+        <div className="ml-3">
+          <p className="font-semibold text-gray-800">@{name}</p>
+          <p className="text-gray-600">{text}</p>
+          <div className="mt-2 text-xs text-gray-500">
+            {/* Display timestamp or other relevant metadata here */}
+          </div>
+          <div className="mt-2 flex items-center">
+            <button className="text-blue-500 hover:underline">Reply</button>
+            <span className="ml-2">|</span>
+            <button className="text-gray-500 hover:underline">Like</button>
+            <span className="ml-2">|</span>
+            <button className="text-gray-500 hover:underline">Dislike</button>
+          </div>
         </div>
       </div>
+      {replies.length > 0 && (
+        <div className="ml-7">
+          {replies.map((reply, index) => (
+            <Comment key={index} data={reply} level={level + 1} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
-const CommenstList = ({ comments }) => {
-  return comments.map((comment, index) => (
-    <div className=" pl-2 w-[35rem] " key={index}>
-      <Comments data={comment} />
-      <div className="pl-3 border-l-2">
-        <CommenstList comments={comment.replies} />
-      </div>
-    </div>
-  ));
-};
-
 const CommentsContainer = () => {
   return (
-    <div className="px-3 w-[44rem] ">
-      <h1 className="font-bold py-3 text-2xl">Comments:</h1>
-      <CommenstList comments={commentData} />
+    <div className="px-4">
+      <h2 className="text-xl font-semibold mb-4">Comments</h2>
+      {commentData.map((comment, index) => (
+        <Comment key={index} data={comment} />
+      ))}
     </div>
   );
 };

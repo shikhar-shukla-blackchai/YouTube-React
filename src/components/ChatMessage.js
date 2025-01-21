@@ -1,17 +1,18 @@
 import React from "react";
 
-const ChatMessage = ({ name, message }) => {
+const ChatMessage = ({ name, message, timestamp }) => {
   return (
-    <div className="flex items-center py-2 w-full  ">
+    <div className="chat-message flex items-center py-2 px-4 border-b border-gray-200">
       <img
-        className="h-9 pt-2 pl-4"
-        alt="user-logo"
+        className="h-4 w-4 rounded-full mr-3"
         src="https://cdn-icons-png.flaticon.com/128/64/64572.png"
+        alt="user-avatar"
       />
-      <span className="mt-1 font-bold text-[11px] text-gray-500 ml-2 text-nowrap">
-        @{name}
-      </span>
-      <span className="mt-1 ml-3 text-sm text-[11px]">{message}</span>
+      <div className="flex-grow">
+        <span className="font-semibold text-gray-700 text-sm">{name}</span>
+        <span className="text-gray-500 text-xs ml-1">{timestamp}</span>
+        <p className="text-gray-600 text-sm mt-1">{message}</p>
+      </div>
     </div>
   );
 };

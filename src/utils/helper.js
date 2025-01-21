@@ -175,44 +175,18 @@ var nameList = [
   "Paradox",
 ];
 
-export function generateRendomName() {
-  return nameList[Math.floor(Math.random() * nameList.length)];
+export function generateRandomName() {
+  const names = nameList;
+  const randomIndex = Math.floor(Math.random() * names.length);
+  return names[randomIndex];
 }
 
-export function makeRendomMessage(length) {
-  let result = "";
+export function makeRandomMessage(length) {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  const charactersLength = characters.length;
-  let counter = 0;
-  while (counter < length) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    counter += 1;
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return result;
-}
-
-// prime number
-function isPrime(num) {
-  if (num <= 1) {
-    return false;
-  }
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-  return true;
-}
-
-export function findNthPrime(n) {
-  let count = 0;
-  let num = 2;
-  while (count < n) {
-    if (isPrime(num)) {
-      count++;
-    }
-    num++;
-  }
-  return num - 1;
 }
